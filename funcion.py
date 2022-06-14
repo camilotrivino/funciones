@@ -1,7 +1,6 @@
 # sin argumentos(entrada) y sin retorno(salida)
 def saludar():
-    saludo="bienvenidos a funciones"
-    print(saludo)
+    return "Bienvenido a Python"
 
 #sin argumentos(entrada) y con retorno(salida)
 def suma():
@@ -10,9 +9,14 @@ def suma():
     total=valor1+valor2
     return total
 #con argumentos(entrada) y sin retorno(salida)
-def resta(num1,num2):
-    total=num1-num2
+def resta(a,b):
+    return a-b
+    
+#con argumentos(entrada) y con retorno(salida)
+def multiplicar(valor1,valor2):
+    total=valor1*valor2
     print(total)
+    return total
     
 def descuento():
     valor=int(input("Ingrese el precio a pagar: "))
@@ -20,3 +24,4 @@ def descuento():
     total=valor-valor*(desc/100)
     print(f"TOTAL A PAGAR: {total}")
     return total
+
