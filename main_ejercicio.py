@@ -9,17 +9,23 @@ while menu:
     try:
         opc=int(input("Ingrese una opcion: "))
         if opc==1:
-            iva=calculo.iva()
-            print(iva)
+           precio=int(input("Ingrese el precio del producto: \n$"))
+           iva=calculo.iva(precio)
+           print(f"el iva es: ${iva} (precio: ${precio}") 
         elif opc==2:
-            descuento=calculo.descuento()
-            print()
+            precio=int(input("Ingrese precio: \n$"))
+            descuento=int(input("Ingrese el porcentaje de descuento"))
+            total=calculo.descuento(precio,descuento)
+            print(f"El valor total del producto es: ${total} (descuento: {descuento})")
         elif opc==3:
-            imc=calculo.imc()
-            print(imc)
+            peso=int(input("Ingrese su peso: "))
+            altura=int(input("Ingrese su altura en metros: "))
+            imc=calculo.imc(peso,altura)
+            resultado=calculo.nivel_imc(imc)
+            print()
         elif opc==4:
             menu=False
             print("HAS SALIDO")
     except:
-        print("ERROR")
+        print("ERROR ELIGA UNA OPCION DE 1 A 4.")
         

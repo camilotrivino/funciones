@@ -1,28 +1,24 @@
-def iva():
-    precio=int(input("Ingrese el valor del producto:\n$"))
-    total=precio+precio*0.19
-    print(f"el precio del producto con iva es: ${total}")
+def iva(precio):
+    iva=precio*0.19
+    return iva
+def descuento(precio, descuento):
+    total=precio-precio*(descuento/100)
     return total
-def descuento():
-    valor=int(input("Ingrese el precio a pagar: "))
-    desc=float(input("Ingrese el descuento: "))
-    total=valor-valor*(desc/100)
-    print(f"TOTAL A PAGAR: ${total}")
-    return total
-def imc():
-    peso=float(input("Ingrese su peso. \nkg: "))
-    esta=float(input("Ingrese su estatura. \nmtr: "))
-    resultado=peso/(esta**2)
-    if resultado>18.5:
-        print(f"Usted esta BAJO PESO kg.{resultado}")
-    elif resultado>=18.5 or resultado<=24.9:
-        print(f"Usted esta en peso ADECUADO kg.{resultado}")
-    elif resultado>=25.0 or resultado<=29.9:
-        print(f"Usted esta en peso SOBREPESO kg.{resultado}")
-    elif resultado>=30.0 or resultado<=34.9:
-        print(f"Usted esta en peso OBESIDAD GRADO 1 kg.{resultado}")
-    elif resultado>=35.0 or resultado<=39.9:
-        print(f"Usted esta en peso OBESIDAD GRADO 2 kg.{resultado}")
-    elif resultado>40:
-        print(f"Usted esta en peso OBESIDAD GRADO 3 kg.{resultado}")
-    return resultado
+def imc(peso, altura):
+    imc=peso/altura**2
+    return imc
+def nivel_imc(imc):
+    if imc>18.5:
+        estado="Bajo peso"
+    elif imc>18.5 and imc<25:
+        estado="adecuado"
+    elif imc>25 and imc<30:
+        estado="sobre peso"
+    elif imc>30 and imc<35:
+        estado="Obesidad grado 1"
+    elif imc>35 and imc<40:
+        estado="obesidad grado 2"
+    else:
+        estado="Obesidad grado 3"
+    return estado   
+        
